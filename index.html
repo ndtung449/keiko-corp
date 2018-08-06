@@ -6,12 +6,12 @@
 	<!--  App Description  -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-
+<!-- 
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
 	<link rel="stylesheet" type="text/css" href="css/owl.transitions.css"/>
 	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css"/>
 	<link rel="stylesheet" type="text/css" href="css/animate.css"/>
-	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+	<link rel="stylesheet" type="text/css" href="css/main.css"/> -->
 
 
 	
@@ -295,6 +295,30 @@
 	<script type="text/javascript" src="js/parallax.js"></script>
 	<script type="text/javascript" src="js/nicescroll.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
-	<script type="text/javascript" src="js/scrollTo.js"></script>
+  <script type="text/javascript" src="js/scrollTo.js"></script>
+ 
+  <script>
+    const loadStyleSheet = (src) =>{
+        if (document.createStyleSheet) {
+          document.createStyleSheet(src);
+        }
+        else {
+          const stylesheet = document.createElement('link');
+          stylesheet.href = src;
+          stylesheet.rel = 'stylesheet';
+          stylesheet.type = 'text/css';
+          document.getElementsByTagName('head')[0].appendChild(stylesheet);
+        }
+    }
+      // All of the objects are in the DOM, and all the images, scripts, links have finished loading.
+      window.onload = function () {
+        console.log('window done!')
+        loadStyleSheet('css/main.css');
+        loadStyleSheet('css/animate.css');
+        loadStyleSheet('css/owl.carousel.css');
+        loadStyleSheet('css/owl.transitions.css');
+        loadStyleSheet('css/bootstrap.css');
+      };
+  </script>
 </body>
 </html>
